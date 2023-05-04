@@ -1,9 +1,11 @@
 package com.ohgiraffers.section02.looping_and_branching.level04.advanced;
 
+import java.util.Scanner;
+
 public class Application1 {
-	
+
 	public static void main(String[] args) {
-		
+
 		/* 어떤 문장의 각 알파벳을 일정한 거리만큼 밀어서
 		 * 다른 알파벳으로 바꾸는 암호화 방식을 시저 암호라고 합니다.
 		 * 
@@ -28,7 +30,32 @@ public class Application1 {
 		 * -- 출력 예시 --
 		 * b C a
 		 * */
-		
+
+		Scanner sc = new Scanner(System.in);
+		System.out.print("문자열을 입력하세요 : ");
+		String str = sc.nextLine();
+		System.out.print("숫자를 입력하세요 : ");
+		int num = sc.nextInt();
+		if(num > 26) {
+			num /= 26;
+		}
+
+		for (int i = 0; i < str.length(); i++) {
+			if ((int) (str.charAt(i)) >= 65 && (int) (str.charAt(i)) <= 90) {
+				if ((int) (str.charAt(i)) + num > 90) {
+					System.out.print((char) (str.charAt(i) + num - 26));
+				} else {
+					System.out.print((char) (str.charAt(i) + num));
+				}
+			} else if ((int) (str.charAt(i)) >= 97 && (int) (str.charAt(i)) <= 122) {
+				if ((int) (str.charAt(i)) + num > 122) {
+					System.out.print((char) (str.charAt(i) + num - 26));
+				} else {
+					System.out.print((char) (str.charAt(i) + num));
+				}
+			}
+			System.out.print(" ");
+			i++;
+		}
 	}
-	
 }
