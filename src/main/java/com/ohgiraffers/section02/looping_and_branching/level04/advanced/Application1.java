@@ -42,7 +42,7 @@ public class Application1 {
 			} else if(b > 0 && b < 26) {
 				for(int i = 0; i < len; i += 2) {
 					char a = (char)(str.charAt(i) + b);
-					if(a > 122 || str.charAt(i) - 65 > b) {
+					if(a > 122 && str.charAt(i) - 65 > b) {
 						a -= 26;
 					}
 					String str2 = String.valueOf(a);
